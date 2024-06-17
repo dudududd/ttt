@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Get .env
-        run: echo "수동 is wrokind"
+        run: echo "수동 is wrokind ${{ github.ref }}"
