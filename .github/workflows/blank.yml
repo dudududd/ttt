@@ -1,0 +1,12 @@
+name: Production Deploy
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get .env
+        run: echo "수동 is wrokind"
