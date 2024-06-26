@@ -19,7 +19,7 @@ jobs:
                     {"type": "text", "text": "브랜치",
                       "inlines": 
                         [{"type": "styled", "text": "브랜치 : ", "bold": true }, 
-                        {"type": "styled", "text": ${{ github.ref_name }} }]},
+                        {"type": "styled", "text": "${{ github.ref_name }}" }]},
                     {"type": "text", "text": "작업자", 
                       "inlines": 
                         [{"type": "styled", "text": "작업수행자 : ", "bold": true}, 
