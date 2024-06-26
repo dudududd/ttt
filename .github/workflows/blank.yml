@@ -17,4 +17,4 @@ jobs:
             "blocks":[{"type":"text","text":"카카오워크에 오신걸 환영합니다.",
             "inlines":[{"type":"styled","text":"카카오워크에 "},
                       {"type":"styled","text":"오신걸 ","bold":true},
-                      {"type":"styled","text":" 환영합니다.","color":"red"}]}]}'
+                      {"type":"styled","text":" 환영합니다.","color":"red"}]}]}' > /dev/null
