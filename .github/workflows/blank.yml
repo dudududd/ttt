@@ -8,5 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get .env
-        run: echo "test bracnh is ${{ github.ref }}"
+    - name: send notifictaion 
+      run: | 
+        curl -X POST https://api.kakaowork.com/v1/messages.send \
+        -H "Authorization: Bearer ${{ secrets.APP_KEY }}" \
+        -H "Content-Type: application/json" \
+        -d '{"conversation_id": ${{ secrets.CONVENTION_ID }},"text":"카카오워크에 오신걸 환영합니다.",
+            "blocks":[{"type":"text","text":"카카오워크에 오신걸 환영합니다.",
+            "inlines":[{"type":"styled","text":"카카오워크에 "},
+                      {"type":"styled","text":"오신걸 ","bold":true},
+                      {"type":"styled","text":" 환영합니다.","color":"red"}]}]}'
