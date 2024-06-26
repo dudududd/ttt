@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: send notifictaion 
       run: |
-        curl -X POST https://api.kakaowork.com/v1/messages.send \
+        curl -v -g -X POST https://api.kakaowork.com/v1/messages.send \
              -H "Authorization: Bearer ${{ secrets.APP_KEY }}" \
              -H "Content-Type: application/json" \
              -d '{"conversation_id": ${{ secrets.CONVENTION_ID }},"text": "github actions 수행",
