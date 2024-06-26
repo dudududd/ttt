@@ -15,79 +15,24 @@ jobs:
              -H "Content-Type: application/json" \
              -d '{"conversation_id": ${{ secrets.CONVENTION_ID }},"text": "github actions 수행",
                   "blocks": [
-                    {
-                      "type": "header",
-                      "text": "Github Actions 배포 결과",
-                      "style": "white"
-                    },
-                    {
-                      "type": "text",
-                      "text": "브랜치",
-                      "inlines": [
-                        {
-                          "type": "styled",
-                          "text": "브랜치 : ",
-                          "bold": true
-                        },
-                        {
-                          "type": "styled",
-                          "text": ${{ github.ref_name }}
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "작업자",
-                      "inlines": [
-                        {
-                          "type": "styled",
-                          "text": "작업수행자 : ",
-                          "bold": true
-                        },
-                        {
-                          "type": "styled",
-                          "text": ${{ github.actor }}
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "결과",
-                      "inlines": [
-                        {
-                          "type": "styled",
-                          "text": "수행결과 : ",
-                          "bold": true
-                        },
-                        {
-                          "type": "styled",
-                          "text": "깃 수행 결과 "
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "github link",
-                      "inlines": [
-                        {
-                          "type": "styled",
-                          "text": "Githublink "
-                        },
-                        {
-                          "type": "link",
-                          "text": "Repository",
-                          "url": ${{ github.repositoryUrl }} 
-                        }
-                      ]
-                    },
-                    {
-                      "type": "description",
-                      "term": "날짜",
-                      "content": {
-                        "type": "text",
-                        "text": "2020년 9월 16일 7시"
-                      },
-                      "accent": true
-                    }
-                  ]
-                }'
+                    {"type": "header", "text": "Github Actions 배포 결과", "style": "white"},
+                    {"type": "text", "text": "브랜치",
+                      "inlines": 
+                        [{"type": "styled", "text": "브랜치 : ", "bold": true }, 
+                        {"type": "styled", "text": ${{ github.ref_name }}}]},
+                    {"type": "text", "text": "작업자", 
+                      "inlines": 
+                        [{"type": "styled", "text": "작업수행자 : ", "bold": true}, 
+                        {"type": "styled", "text": ${{ github.actor }}}]},
+                    {"type": "text", "text": "결과", 
+                      "inlines": 
+                        [{"type": "styled", "text": "수행결과 : ","bold": true},
+                        {"type": "styled", "text": "깃 수행 결과 "}]},
+                    {"type": "text", "text": "github link", 
+                      "inlines": 
+                        [{"type": "styled", "text": "Githublink "}, 
+                        {"type": "link", "text": "Repository", "url": ${{ github.repositoryUrl }}}]},
+                    {"type": "description", "term": "날짜",
+                      "content": {"type": "text","text": "2020년 9월 16일 7시"},
+                      "accent": true}
+                  ]}'
