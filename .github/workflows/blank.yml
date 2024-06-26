@@ -31,7 +31,7 @@ jobs:
                     {"type": "text", "text": "결과", 
                       "inlines": 
                         [{"type": "styled", "text": "수행결과 : ","bold": true},
-                        {"type": "styled", "text": "깃 수행 결과 "}]},
+                        {"type": "styled", "text": "${{ needs.build.result }}"}]},
                     {"type": "text", "text": "github link", 
                       "inlines": 
                         [{"type": "styled", "text": "Githublink "}, 
