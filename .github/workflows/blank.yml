@@ -35,7 +35,7 @@ jobs:
                     {"type": "text", "text": "github link", 
                       "inlines": 
                         [{"type": "styled", "text": "Githublink "}, 
-                        {"type": "link", "text": "Repository", "url": "${{ github.repositoryUrl }}" }]},
+                        {"type": "link", "text": "Repository", "url": "${{ github.repository }}" }]},
                     {"type": "description", "term": "날짜",
                       "content": {"type": "text","text": "${{ steps.date.outputs.date }}"},
                       "accent": true}
