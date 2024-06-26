@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: get currrent date
+      id: date
+      run: echo "::set-output name=date::$(TZ='Asia/Seoul' date '+%Y-%m-%d %H:%M')"
+      
     - name: send notifictaion 
       run: |
         curl -v -g -X POST https://api.kakaowork.com/v1/messages.send \
@@ -33,6 +37,6 @@ jobs:
                         [{"type": "styled", "text": "Githublink "}, 
                         {"type": "link", "text": "Repository", "url": "${{ github.repositoryUrl }}" }]},
                     {"type": "description", "term": "날짜",
-                      "content": {"type": "text","text": "2020년 9월 16일 7시"},
+                      "content": {"type": "text","text": "${{ steps.date.outputs.date }}"},
                       "accent": true}
                   ]}'
